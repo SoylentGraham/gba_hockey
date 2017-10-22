@@ -36,7 +36,7 @@ enum {
 	TILE_TYPE_COUNT,
 };
 
-extern const u16 *tile_set_data_addr[TILE_TYPE_COUNT];
+extern u16 *tile_set_data_addr[TILE_TYPE_COUNT];
 
 
 

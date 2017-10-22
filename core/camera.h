@@ -3,7 +3,6 @@
 
 
 #include "gba.h"
-#include "car.h"
 #include "types.h"
 
 
@@ -32,7 +31,6 @@ s32 *real_camera[2];
 
 s16 get_camera_x(void);
 s16 get_camera_y(void);
-void bind_camera(a_car *car);
 void lock_camera(void);
 void release_camera(void) ;
 void unbind_camera(void);

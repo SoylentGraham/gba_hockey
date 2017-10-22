@@ -36,7 +36,7 @@ const u8 tile_set_lengths[TILE_TYPE_COUNT] = {
 };
 
 
-const u16 *tile_set_data_addr[TILE_TYPE_COUNT] ={
+u16 *tile_set_data_addr[TILE_TYPE_COUNT] ={
 	blank_tile_data,
 	hockey_guy_body_data,
 	hockey_guy_head_data,

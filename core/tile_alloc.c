@@ -20,11 +20,11 @@ u16 sys_brightness_mod=DEFAULT_BRIGHTNESS_MOD;
 //custom addr's of media locations and stuff in game/tile_sets
 extern const u8 tile_set_lengths[TILE_TYPE_COUNT];
 
-extern const u16 *tile_data_addr[2];
-extern const u16 *tile_set_data_addr[TILE_TYPE_COUNT];
+extern u16 *tile_data_addr[2];
+extern u16 *tile_set_data_addr[TILE_TYPE_COUNT];
 
-extern const u16 *tile_palette_addr[2];
-extern const u16 *tile_palette_data_addr[2];
+extern u16 *tile_palette_addr[2];
+extern u16 *tile_palette_data_addr[2];
 
 
 

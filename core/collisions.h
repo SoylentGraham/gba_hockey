@@ -4,7 +4,6 @@
 
 #include "gba.h"
 #include "types.h"
-#include "car.h"
 
 
 
@@ -50,8 +49,6 @@
 
 
 
-
-u8 check_tiles_around_car( u8 *collision_id_a, u8 *collision_id_b,  s16 *collided_tile_x, s16 *collided_tile_y, a_car *car, u8 radius);
 
 u8 check_collisions ( u8 width_a, u8 width_b, u8 height_a, u8 height_b,	 const u8 *mask_a, const u8 *mask_b, s16 x_coord_a, s16 y_coord_a, s16 x_coord_b, s16 y_coord_b, u8 *crash_id_a, u8 *crash_id_b, const u8 *u8_mask_a, const u8 *u8_mask_b  ) ;
 
