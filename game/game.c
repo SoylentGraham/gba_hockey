@@ -83,6 +83,11 @@ s16 game_brightness_mod; // 0 is plain
 extern s16 tiny_scroll_offset_y[4];
 extern const s16 tiny_scroll_offset_x[4];
 
+#define REG_SRAM   ((volatile u8*)0xE000000)
+//	get player count from SRAM
+
+
+
 
 void update_game_brightness(void)
 {
@@ -158,7 +163,7 @@ void init_game(void)
 	reset_puck( 40, 40, &sprites[sprite_count] );
 	sprite_count++;
 
-
+	
 	for ( t=0; t<TEAM_COUNT; t++ )
 	{
 		for ( i=0; i<(PLAYER_COUNT/TEAM_COUNT); i++ )
@@ -208,7 +213,7 @@ void init_game(void)
 
 
 	if (DRAW_PROMO)
-		draw_string(0,19,1,"www.ferk.co.uk");
+		draw_string(0,19,1,"Slap Stick. 2003-2017.");
 	if (DRAW_SCOREBOARD)
 		init_scoreboard();
 
@@ -597,11 +602,18 @@ void control_players(void)
 			}
 		}
 
-
+		u8 PlayerControlled = REG_SRAM[p];
+		
 		switch(players[p].control)	{
 		
+		case CONTROL_AI:
+			{
+				if ( PlayerControlled == 0 )
+					ai_control_player( (a_hockey_player*)&players[p] );
+				break;
+			}
+			
 		case CONTROL_AI_NO_BRAIN:
-		case CONTROL_AI: 
 			{
 				ai_control_player( (a_hockey_player*)&players[p] );
 				break;
